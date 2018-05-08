@@ -7,6 +7,11 @@ use App\Recipe;
 
 class RecipesController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Recipe $recipe)
     {
         $recipes = Recipe::all();
